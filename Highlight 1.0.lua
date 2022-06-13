@@ -19,7 +19,7 @@ function esp(target, color)
                 highlight.Adornee = target.Character
                 highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
                 highlight.FillColor = color
-                highlight.FillTransparency = 1
+                highlight.FillTransparency = 0.5
                 highlight.OutlineColor = color
                 highlight.OutlineTransparency = 0
                 highlights[target] = highlight
