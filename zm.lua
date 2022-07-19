@@ -39,7 +39,7 @@ local function MysteryBoxHighlight(object)
     highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
     
     highlight.FillColor = Color3.fromRGB(255, 205, 100)
-    highlight.FillTransparency = 1.0
+    highlight.FillTransparency = 0.75
     
     highlight.OutlineColor = Color3.fromRGB(255, 205, 100)
     highlight.OutlineTransparency = 0.0
@@ -236,6 +236,34 @@ end
 
 
 
+-- /// -- PowerUp Locations -- /// --
+local function PowerUpHighlight(object)
+    local highlight = Instance.new('Highlight', highlights)
+    highlight.Adornee = object
+    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+
+    highlight.FillColor = Color3.fromRGB(155, 155, 55)
+    highlight.FillTransparency = 0.25
+
+    highlight.OutlineColor = Color3.fromRGB(155, 155, 55)
+    highlight.OutlineTransparency = 0.0
+
+    highlight.Adornee.Changed:Connect(function()
+        if not highlight.Adornee or not highlight.Adornee.Parent then
+            highlight:Destroy()    
+        end
+    end)
+
+    return highlight
+end
+
+    local function LocatePowerUp(object)
+        if object.Parent.Name == '_Powerups' then
+            PowerUpHighlight(object)
+        end
+    end
+    
+    
 -- /// -- Remove Doors -- /// --
 local function RemoveDoors(object)
     if object.Name == '_Doors' then
@@ -248,26 +276,32 @@ print"Loading finished"
 
 for i,v in pairs(workspace:GetDescendants()) do
     RemoveDoors(v)
-    -- LocateZombie(v)
-        LocateDoubleTap(v)
-        LocateSpeedCola(v)
-        LocateQuickRevive(v)
-        LocateMuleKick(v)
-        LocateJuggernog(v)
-    HighlightParts(v)
-    LocateMysteryBox(v)
+    LocateDoubleTap(v)
+    LocateSpeedCola(v)
+    LocateQuickRevive(v)
+    LocateMuleKick(v)
+    LocateJuggernog(v)
 end
 
 workspace.DescendantAdded:Connect(function(v)
     RemoveDoors(v)
-    -- LocateZombie(v)
-        LocateDoubleTap(v)
-        LocateSpeedCola(v)
-        LocateQuickRevive(v)
-        LocateMuleKick(v)
-        LocateJuggernog(v)
-    HighlightParts(v)
-    LocateMysteryBox(v)
+    LocateDoubleTap(v)
+    LocateSpeedCola(v)
+    LocateQuickRevive(v)
+    LocateMuleKick(v)
+    LocateJuggernog(v)
 end)
 
+for i,q in pairs(workspace:GetDescendants()) do
+    LocateMysteryBox(q)
+    LocatePowerUp(q)
+    HighlightParts(q)
+end
 
+workspace.DescendantAdded:Connect(function(q)
+    LocateMysteryBox(q)
+    LocatePowerUp(q)
+    HighlightParts(q)
+end)
+
+    -- LocateZombie(v)
