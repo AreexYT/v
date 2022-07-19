@@ -248,70 +248,26 @@ print"Loading finished"
 
 for i,v in pairs(workspace:GetDescendants()) do
     RemoveDoors(v)
-    wait()
-            -- LocateZombie(v)
-            -- wait()
+    -- LocateZombie(v)
         LocateMysteryBox(v)
-        wait()
         LocateDoubleTap(v)
-        wait()
         LocateSpeedCola(v)
-        wait()
         LocateQuickRevive(v)
-        wait()
         LocateMuleKick(v)
-        wait()
         LocateJuggernog(v)
-        wait()
     HighlightParts(v)
-    wait()
 end
 
 workspace.DescendantAdded:Connect(function(v)
     RemoveDoors(v)
-    wait()
-            -- LocateZombie(v)
-            -- wait()
+    -- LocateZombie(v)
         LocateMysteryBox(v)
-        wait()
         LocateDoubleTap(v)
-        wait()
         LocateSpeedCola(v)
-        wait()
         LocateQuickRevive(v)
-        wait()
         LocateMuleKick(v)
-        wait()
         LocateJuggernog(v)
-        wait()
     HighlightParts(v)
-    wait()
 end)
 
 
---  -- /// -- Sample -- /// --
---  local function SampleHighlight(object)
---     local highlight = Instance.new('Highlight', highlights)
---     highlight.Adornee = object
---     highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
- 
---     highlight.FillColor = Color3.fromRGB(255, 0, 0)
---     highlight.FillTransparency = 0.75
-    
---     highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
---     highlight.OutlineTransparency = 0.0
-    
---     highlight.Adornee.Changed:Connect(function()
---         if not highlight.Adornee or not highlight.Adornee.Parent then
---             highlight:Destroy()    
---         end
---     end)
-    
---     return highlight
---  end
- 
---  local function LocateSample(object)
---     if object.Name == 'SampleName' then
---         SampleHighlight(object)
---     end
--- end
