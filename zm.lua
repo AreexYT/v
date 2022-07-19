@@ -248,7 +248,7 @@ print"Loading finished"
 
 for i,v in pairs(workspace:GetDescendants()) do
     RemoveDoors(v)
-        LocateZombie(v)
+        --LocateZombie(v)
         LocateMysteryBox(v)
         LocateDoubleTap(v)
         LocateSpeedCola(v)
@@ -260,7 +260,7 @@ end
 
 workspace.DescendantAdded:Connect(function(v)
     RemoveDoors(v)
-        LocateZombie(v)
+        --LocateZombie(v)
         LocateMysteryBox(v)
         LocateDoubleTap(v)
         LocateSpeedCola(v)
