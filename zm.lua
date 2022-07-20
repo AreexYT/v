@@ -61,6 +61,35 @@ end
 
 
 
+-- /// -- Pack a Punch -- /// --
+local function PackaPunchHighlight(object)
+    local highlight = Instance.new('Highlight', highlights)
+    highlight.Adornee = object
+    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    
+    highlight.FillColor = Color3.fromRGB(235, 235, 255)
+    highlight.FillTransparency = 0.75
+    
+    highlight.OutlineColor = Color3.fromRGB(235, 235, 255)
+    highlight.OutlineTransparency = 0.0
+    
+    highlight.Adornee.Changed:Connect(function()
+        if not highlight.Adornee or not highlight.Adornee.Parent then
+            highlight:Destroy()    
+        end
+    end)
+    
+    return highlight
+end
+
+    local function LocatePackaPunch(object)
+        if object.Name == 'PackAPunch' then
+            PackaPunchHighlight(object)
+        end
+    end
+
+
+
 -- /// -- Double Tap -- /// --
 local function DoubleTapHighlight(object)
     local highlight = Instance.new('Highlight', highlights)
@@ -294,12 +323,14 @@ end)
 
 for i,q in pairs(workspace:GetDescendants()) do
     LocateMysteryBox(q)
+    LocatePackaPunch(q)
     LocatePowerUp(q)
     HighlightParts(q)
 end
 
 workspace.DescendantAdded:Connect(function(q)
     LocateMysteryBox(q)
+    LocatePackaPunch(q)
     LocatePowerUp(q)
     HighlightParts(q)
 end)
