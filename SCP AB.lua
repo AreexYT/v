@@ -24,7 +24,7 @@ local function REDHighlight(object)
 end
 
 local function LocateRED(object)
-   if object.Name == 'SCP049' or object.Name == 'SCP096' or object.Name == 'SCP173' or object.Name == 'SCP966' or object.Name == 'SCP457' or object.Name == 'SCP106' or object.Name == 'SCP939' or object.Name == 'SCP860' or object.Name == 'ForestMonster' or object.Name == 'Zombie' then
+   if object:IsA'Model' and object.Name == 'SCP049' or object:IsA'Model' and object.Name == 'SCP096' or object:IsA'Model' and object.Name == 'SCP173' or object:IsA'Model' and object.Name == 'SCP966' or object:IsA'Model' and object.Name == 'SCP457' or object:IsA'Model' and object.Name == 'SCP106' or object:IsA'Model' and object.Name == 'SCP939' or object:IsA'Model' and object.Name == 'SCP860' or object:IsA'Model' and object.Name == 'ForestMonster' or object:IsA'Model' and object.Name == 'Zombie' then
        REDHighlight(object)
    end
 end
