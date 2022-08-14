@@ -9,7 +9,7 @@ local function RedHighlight(object)
    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 
    highlight.FillColor = Color3.fromRGB(255, 0, 0)
-   highlight.FillTransparency = 1
+   highlight.FillTransparency = 0.5
    
    highlight.OutlineColor = Color3.fromRGB(255, 0, 0)
    highlight.OutlineTransparency = 0.0
@@ -29,7 +29,7 @@ local function YellowHighlight(object)
    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
 
    highlight.FillColor = Color3.fromRGB(255, 255, 0)
-   highlight.FillTransparency = 1
+   highlight.FillTransparency = 0.5
    
    highlight.OutlineColor = Color3.fromRGB(255, 255, 0)
    highlight.OutlineTransparency = 0.0
